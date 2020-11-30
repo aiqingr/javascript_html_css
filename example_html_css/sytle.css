@@ -1,0 +1,33 @@
+h1 {
+    color: blue;
+    font-size: 40px;
+    font-family: Arial;
+}
+
+h2 {
+    color: rgba(11,11,11,0.2);
+    font-size: 25px;
+    font-family: "Helvetica Neue", Arial;
+}
+
+.main-text {
+    text-align: justify;
+}
+
+#author-text {
+    font-size: 30px;
+}
+
+.container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-post {
+    background-color: aquamarine;
+}
+
+.author-box {
+    background-color: yellow;
+}
