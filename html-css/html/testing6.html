@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- audio标签引用外部的音频文件 是一个替换标签
+    音视频文件 默认情况下是不允许用户控制播放暂停
+    属性 
+        -controls 是否允许用户控制播放 是没有值的
+        -autoplay 是否自动播放 如果设置了autoplay则音乐在页面打开的时候会自动播放
+        但是现在的浏览器大部分都不会对音乐进行自动播放
+        -loop 音乐重复循环
+    -->
+    <audio src="123.mp3" controls autoplay loop></audio>
+    <!-- audio 在ie8以及以前的版本是不支持的 
+    除了通过src来指定外部音视频文件 还可以用过source来指定
+    如果通过一下的方式 可以在浏览器不支持的情况下 还可以显示文字信息 
+    source 可以添加多个 哪个最先支持 播放哪一个 都不支持的情况下 会有文字信息
+    -->
+    <audio controls>
+        Sorry. Your brower is not supporting this audio.
+        <source src="123.mp3"></source>
+        <source src="123.ogg"></source>
+    </audio>
+    <!-- IE8 可以使用embed -->
+    <embed src="123.mp3" type="audio/mp3">
+
+    <audio controls>
+        <source src="123.mp3"></source>
+        <source src="123.webm"></source>
+        <embed src="123.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- video 使用的方式和audio是一样的 -->
+    <video src="123.mp4"></video>
+</body>
+</html>
