@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic CSS</title>
+    <style>
+        /* 所有段落设置为红色
+        元素选择器
+            作用：根据标签名来选择指定的元素
+            语法：标签名{}
+            例子：p{} h1{} */
+        /* p{
+            color: red;
+        } */
+
+        /* 将第一句话设置为红色
+        id选择器 id是唯一的不可以重复的
+            作用：根据元素的id属性值选中一个元素
+            语法：#id属性值{}
+            例子： #box{} #red{} */
+        /* #red{
+            color: red;
+        } */
+
+        /* 将最后两句话设置为蓝色
+        类选择器
+            作用：根据元素的class属性值选中一组元素
+            语法：.class属性值 */
+        /* .blue{
+            color: blue;
+        }
+
+        .qing{
+            font-size: 50px;
+        } */
+
+        /* 通配选择器
+            作用：选中页面中的所有元素
+            语法：* */
+        *{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+    <h1 class="blue qing">浅浅 没有因为没有所以</h1>
+    <p id="red">纵然万劫不复，纵然相思入骨，我也待你眉眼如初，岁月如故</p>
+    <p>纵然笑靥如故，纵然繁华落幕，我亦许你金风玉露，此生不复</p>
+    <p>纵然荒冢枯骨，纵然黄泉陌路，我亦等你奈何桥上，生死同路</p>
+    <p>纵然魂消身死，纵然万世不枯，我亦跳下忘川河，百世情苦</p>
+    <!-- class是一个标签属性 他和id类似 不同的是class可以重复使用
+    可以通过class属性来为元素分组
+    可以同时为一个元素指定多个class属性 -->
+    <p class="blue">纵然轮回千古，纵然形同陌路，我亦寻你千百度，初心不负</p>
+    <p class="blue">纵然望穿秋水，纵然思绪满腹。我亦爱你不能诉，心似红豆</p>
+</html>
