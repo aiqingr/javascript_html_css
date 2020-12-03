@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 样式的继承， 我们为一个元素设置的样式同时也会应用到他的后代元素上
+        继承是发生在祖先和后代之间的
+        继承的设计是为了方便开发
+            利用继承我们可以将一些通用的样式统一设置到共同的祖先元素上
+                这样只需要设置一次即可让所有的元素都具有该样式
+            注意： 并不是所有的样式都会被继承
+                比如 背景相关的 布局相关等的样式都不会被继承
+            打开页面显示should not be backgroup color 也有颜色是因为本身是透明的颜色*/
+        p, div{
+            color: red;
+            background-color: yellowgreen;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <p>
+        This is a P element
+        <span>I am a span in P element</span>
+        <br>
+        <span>There should not be backgroup color</span>
+    </p>
+    <br>
+    <span>This is a seperate span</span>
+    <br>
+    <div>
+        I am a div element
+        <span>
+            I am a span element in div
+            <em>I am an em in span element</em>
+        </span>
+    </div>
+</body>
+</html>
