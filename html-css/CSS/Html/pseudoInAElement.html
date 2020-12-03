@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :link 用来表示没访问过的链接（正常的链接） */
+        a:link{
+            color: red;
+        }
+        /* visited 用来表示访问过的链接
+        由于隐私的原因 所以visited这个伪类只能修改链接的颜色  */
+        a:visited{
+            color: blue;
+        }
+
+        /* 鼠标移动到链接 */
+        a:hover{
+            color: green;
+            font-size: 50px;
+        }
+
+        /* 鼠标点击链接 */
+        a:active{
+            color: blueviolet;
+            font-size: 80px;
+        }
+        </style>
+</head>
+<body>
+    <a href="https://www.123.com">visitedLink</a>
+    <br>
+    <a href="https://www.google.com">NotvisitedLink</a>
+</body>
+</html>
