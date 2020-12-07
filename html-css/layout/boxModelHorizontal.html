@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+
+        .inner{
+            width: 500px;
+            height: 200px;
+            background-color: aquamarine;
+            margin-left: auto;
+            margin-right: auto;
+            /* 元素水平方向的布局
+                元素在其父元素中水平方向的布局有以下几个点共同决定
+                margin-left
+                border-left
+                padding-left
+                width
+                padding-right
+                border-right
+                margin-right
+            一个元素在父元素的水平布局中必须满足以下的等式
+            margin-left+border-left+padding-left+width+padding-right+border-right+margin-right
+            =父元素的内容区的宽度（必须等于）
+            0+0+0+200+0+0+0=800
+            0+0+0+200+0+0+600=800
+            以上等式必须满足，如果相加结果不等于，则称为过度约束，则等式会自动调整
+            调整结果
+                -如果七个值中没有auto的情况， 则浏览器会调整margin-right的值
+                -这七个值中 有三个值可以设置为auto
+                width margin-left margin-right
+                如果某个值为auto则auto值会调整以使得等式成立
+                如果width和其他外边距设置为auto 则width会最大外边距会为0 
+                如果两个外边距设置为auto width是一个具体值 则左右外边距等值 子元素水平居中
+                margin可以是负值*/
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>
