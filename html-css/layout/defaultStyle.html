@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 默认样式
+            通常情况下，浏览器会为元素设置一些默认样式
+            默认样式的存在会影响页面的布局 通常情况下 我们要去掉浏览器默认样式（PC端）*/
+        
+        /* 通常情况下不用以下的方式去除浏览器的默认样式
+        但实际中 我们是create一个CSS 把所有的标签筛查一次
+        body{
+            margin: 0;
+        }
+
+        p{
+            margin: 0;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        } */
+
+        /* 简单页面中 而是通过*全选来去除 有特例的时候再强调 */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>This is a paraghrap</p>
+    <p>This is a paraghrap</p>
+    <p>This is a paraghrap</p>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+</body>
+</html>
