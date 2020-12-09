@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News List</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+
+        body{
+            background-color: #bbffaa;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .new-wapper{
+            width: 300px;
+            height: 357px;
+            margin: 50px auto;
+            background-color: #ffffff;
+
+            border-top: 1px solid #dddddd;
+        }
+
+        .news-title{
+            display: inline-block;
+            height: 30px;
+            border-top: 1px red solid;
+            margin-top: -1px;
+            padding-top: 10px;
+        }
+
+        .news-title a{
+            color: black;
+            font-weight: bold;
+        }
+
+        .news-img{
+            height: 150px;
+        }
+
+        .news-img .img-title{
+            margin-top: -20px;
+            color: #ffffff;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+
+        .news-list{
+            margin-top: 20px;
+            margin-left: -2px;
+            /* padding-left: 14px; */
+            /* list-style: square; */
+        }
+
+        .news-list li::before{
+            content: '◻️';
+            color: #dddddd;
+        }
+
+        .news-list li{
+            margin-bottom: 17px;
+        }
+
+        .news-list li a{
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .news-list li a:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="new-wapper">
+        <h2 class="news-title"><a href="#">体育</a></h2>
+
+        <div class="news-img">
+            <a href="">
+                <img src="./pic/newsList/newsimg.png" alt="">
+                <h3 class="img-title">巴萨VS尤文： 33岁+的梅罗对决</h3>      
+            </a>
+        </div>
+
+        <ul class="news-list">
+            <li>
+                <a href="">篮网重拾7秒跑轰，纳什满眼都是10年前的自</a>
+            </li>
+            <li>
+                <a href="">穆氏热刺这一年: 那个迷人的家伙又回来了</a>
+            </li>
+            <li>
+                <a href="">遭遇自由球员市场潜规则，让他25岁就想退役</a>
+            </li>
+            <li>
+                <a href="">纳达尔初出茅庐时曾将温网冠军虐自闭</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
