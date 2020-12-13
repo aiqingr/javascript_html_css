@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <link rel="stylesheet" href="../../fa/css/all.css">
+    <style>
+        li::before{
+            /* 通过伪元素来设置图表字体
+            1找到要设置图标的元素 通过before after等选中
+            2在content中设置字体的编码
+            3设置字体的样式 */
+            content: '\f1b0';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>纵然万劫不复，纵然相思入骨，我也待你眉眼如初，岁月如故</li>
+        <li>纵然笑靥如故，纵然繁华落幕，我亦许你金风玉露，此生不复</li>
+        <li>纵然荒冢枯骨，纵然黄泉陌路，我亦等你奈何桥上，生死同路</li>
+        <li>纵然魂消身死，纵然万世不枯，我亦跳下忘川河，百世情苦</li>
+    </ul>
+    <!--通过实体来使用图标字体
+        &#x+字体编码
+    前面还是需要加上class  -->
+    <span class="fas">&#xf0f3</span>
+</body>
+</html>
