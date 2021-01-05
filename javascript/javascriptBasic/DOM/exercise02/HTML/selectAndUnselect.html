@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function myClick(idBtn, func){
+            let btn = document.getElementById(idBtn);
+            btn.onclick = func;
+        }
+        
+        window.onload = function(){
+            let items = document.getElementsByName("items");
+            let checkedAllBox = document.getElementById("checkedAllBox");
+            myClick("checkedAllBtn", function(){ 
+                for(let i=0; i<items.length; i++){
+                    // 通过多选框的checked属性 可以来获取或者设置多选框的选中状态
+                    items[i].checked = true;
+                }
+                checkedAllBox.checked = true;
+            })
+
+            myClick("checkedNoBtn", function(){
+                for(let i=0; i<items.length; i++){
+                    items[i].checked = false;
+                }
+                checkedAllBox.checked = false;
+            })
+
+            myClick("checkedRevBtn", function(){
+                checkedAllBox.checked = true;
+                for(let i=0; i<items.length; i++){
+                    // if(items[i].checked){
+                    //     items[i].checked = false;
+                    // } else {
+                    //     items[i].checked = true;
+                    // }
+                    items[i].checked = !items[i].checked;
+                    if(!items[i].checked){
+                            checkedAllBox.checked = false;
+                        }
+                }
+            })
+
+            myClick("sendBtn", function(){
+                for(let i=0; i<items.length; i++){
+                    if(items[i].checked == true) {
+                        alert(items[i].value)
+                    }
+                }
+            })
+
+            myClick("checkedAllBox", function(){
+                for(let i=0; i<items.length; i++){
+                    items[i].checked = this.checked;
+                }
+            })
+
+            /*
+                如果四个多选框全部选中 checkedAllBox也应该选中
+                如果四个多选框没有全部选中 checkedAllBox不应该被选中 
+            */ 
+            for(let i=0; i<items.length; i++){
+                items[i].onclick = function(){
+                    checkedAllBox.checked = true;
+                    for(let i=0; i<items.length; i++){
+                        if(!items[i].checked){
+                            checkedAllBox.checked = false;
+                            break;
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <form action="" method="POST">
+        你喜欢的运动是？<input type="checkbox" id="checkedAllBox">全选/全不选
+        <br>
+        <input type="checkbox" name="items" value="football">football
+        <input type="checkbox" name="items" value="basketball">basketball
+        <input type="checkbox" name="items" value="badminton">badminton
+        <input type="checkbox" name="items" value="pinpang">pinpang
+        <br>
+        <input type="button" id="checkedAllBtn" value="全选">全选
+        <input type="button" id="checkedNoBtn" value="全不选">全不选
+        <input type="button" id="checkedRevBtn" value="反选">反选
+        <input type="button" id="sendBtn" value="提交">提交
+    </form>
+</body>
+</html>
