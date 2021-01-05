@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // 定义一个函数 专门用来为指定元素绑定单击响应函数
+        /*
+            参数
+                idStr 要绑定点击响应函数的对象的id属性值
+                func 事件的回掉函数 当单击元素的时候 该函数会被触发        
+        */ 
+        
+        function myClick(idStr, func){
+            let btn = document.getElementById(idStr);
+            btn.onclick = func;
+        }
+        
+        // 返回#bj的父节点
+        window.onload = function(){
+            myClick("btn07", function(){
+                let bj = document.getElementById("bj");
+                /*
+                    innerText
+                        该属性可以获取到元素内部的文本内容
+                        他和innerHTML相似 不同的是他会自动将html标签去除
+                */ 
+                alert(bj.parentElement.innerText);
+            })
+
+
+            //返回#android的前一个兄弟节点
+            myClick("btn08", function(){
+                let android = document.getElementById("android");
+                alert(android.previousSibling);
+                alert(android.previousElementSibling.innerHTML);
+            })
+
+            //返回#username的value属性值
+            myClick("btn09", function(){
+                let um = document.getElementById("username");
+                alert(um.value);
+            })
+
+            //设置#username的value属性值
+            myClick("btn10", function(){
+                let um = document.getElementById("username");
+                um.value = "yeqing";
+            })
+
+            //返回#bj的文本值
+            myClick("btn11", function(){
+                let bj = document.getElementById("bj");
+                alert(bj.innerHTML);
+                alert(bj.innerText);
+                alert(bj.firstChild.nodeValue);
+            })
+        };
+
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>你喜欢哪一个城市</p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+            <br>
+            <br>
+            <p>你喜欢哪款游戏</p>
+            <ul id="game">
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品</li>
+                <li>魔兽</li>
+            </ul>
+            <br>
+            <br>
+            <p>你的手机操作系统</p>
+            <ul id="phone">
+                <li>IOS</li>
+                <li id="android">android</li>
+                <li>Windows Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input class="hello" type="radio" name="gender" value="male">
+            Male
+            <input class="hello" type="radio" name="gender" value="famale">
+            Famale
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde">            
+        </div>
+    </div>
+    <div id="btnlist">
+        <div><button id="btn01">查找#bj节点</button></div>
+        <div><button id="btn02">查找所有li节点</button></div>
+        <div><button id="btn03">查找name=gender的所有节点</button></div>
+        <div><button id="btn04">查找#city下所有li节点</button></div>
+        <div><button id="btn05">查找#city的所有子节点</button></div>
+        <div><button id="btn06">返回#phone的第一个子节点</button></div>
+        <div><button id="btn07">返回#bj的父节点</button></div>
+        <div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">返回#username的value属性值</button></div>
+        <div><button id="btn10">设置#username的value属性值</button></div>
+        <div><button id="btn11">返回#bj的文本值</button></div>
+    </div>
+</body>
+</html>
