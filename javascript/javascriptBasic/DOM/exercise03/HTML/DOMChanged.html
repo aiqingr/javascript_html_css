@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th, div{
+            border: 1px black solid;
+            margin: auto;
+        }
+        div{
+            margin-top: 10px;
+            width: 400px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let allA = document.getElementsByTagName("a");
+            for(let i=0; i<allA.length; i++){
+                allA[i].onclick = function(){
+                    let tr = this.parentNode.parentNode;
+                    let name = tr.children[0].innerHTML;
+                    let flag = confirm("确认删除么？" + name);
+                    if(flag){
+
+                        tr.parentNode.removeChild(tr);
+                    }
+                    /*
+                        点击超链接以后 超链接会跳转页面 这个是超链接的默认行为
+                        如果不希望出现默认行为 可以通过在响应函数的最后return false来取消默认行为
+                    */
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="employeeTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@123.com</td>
+            <td>5000</td>
+            <td><a href="deleteEmp?id=001">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Qing</td>
+            <td>qing@123.com</td>
+            <td>50000</td>
+            <td><a href="deleteEmp?id=002">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Nick</td>
+            <td>nick@123.com</td>
+            <td>52000</td>
+            <td><a href="deleteEmp?id=003">Delete</a></td>
+        </tr>
+    </table>
+
+    <div id="formDiv">
+        <p>添加新员工</p>
+        <table>
+            <tr>
+                <td class="word">name:</td>
+                <td class="inp"><input type="text" name="empName" id="empName"></td>
+            </tr>
+            <tr>
+                <td class="word">email:</td>
+                <td class="inp"><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td class="word">salary:</td>
+                <td class="inp"><input type="text" name="salary" id="salary"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="addEmpButton" value="abc">
+                        Submit
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
