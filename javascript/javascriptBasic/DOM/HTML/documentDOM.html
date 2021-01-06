@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        document.onload = function(){
+            //兼容问题 IE8以下不支持
+            let box = document.getElementsByClassName("box");
+            console.log(box.length);
+            // 使用querySelector的方法 只返回第一个元素
+            let div = document.querySelector(".box1 div");
+            console.log(div.innerHTML);
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"><div>123123</div></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
