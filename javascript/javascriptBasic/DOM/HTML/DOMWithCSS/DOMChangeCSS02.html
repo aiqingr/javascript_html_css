@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            /* width: 200px; */
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let btn01 = document.getElementById("btn01");
+            let btn02 = document.getElementById("btn02");
+            let box1 = document.getElementById("box1");
+            btn01.onclick = function(){
+                /*
+                    import：这个目前已经无法使用了 在在IE6中可以
+                    获取元素当亲啊显示的样式
+                    语法： 元素.currentStyle.样式名
+                    他可以用来读取当前元素正在显示的样式
+                */
+                // alert(box1.currentStyle.width);
+
+                /*
+                    在其他浏览器可以使用的
+                    getComputedStyle()这个方法来获取当前的样式
+                    这个方法是window的方法可以直接使用
+                    需要两个参数
+                        1 要获取样式的元素
+                        2 可以传递一个伪元素，一般都传null
+                    该方法会返回一个对象 该对象中封装了当前元素的样式
+                    可以通过对象.样式名来读取样式
+                    如果获取的样式没有设置 则会获得真实的值 而不是默认值 对于默认值为auto的
+                    比如没有设置width 或者的不是auto而是一个长度 根据浏览器的大小会改变
+                    但是不支持IE8以下
+                */
+                // alert(window.getComputedStyle(box1, null).width);
+                // 通过以上两种方式得到的样式值都是只读的 不可以改
+                //如果都想支持
+                /*
+                    定义一个函数 用来获取指定元的当前样式
+                    参数：
+                        1 obj 获取样式的元素
+                        2 name 获取的样式名
+                */ 
+                function getStyle(obj, name){
+                    alert(getComputedStyle);
+                    if(window.getComputedStyle){
+                        return getComputedStyle(obj, null)[name];
+                    }else{
+                        return obj.getCurrentStyle[name]
+                    }
+                    //正常浏览器
+                    // return getComputedStyle(obj, null)[name];
+                    //IE8的方式
+                    // return obj.getCurrentStyle[name];
+                }
+                getStyle(box1, "width");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <button id="btn01">Click</button>
+    <button id="btn02">Click2</button>
+    <div id="box1"></div>
+</body>
+</html>
