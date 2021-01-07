@@ -58,26 +58,13 @@
                 let email = document.getElementById("email").value;
                 let salary = document.getElementById("salary").value;
                 let tr = document.createElement("tr");
-                let nameTd = document.createElement("td");
-                let emailTd = document.createElement("td");
-                let salaryTd = document.createElement("td");
-                let aTd = document.createElement("td");
-                let aEle = document.createElement("a")
-                let nameText = document.createTextNode(name);
-                let emailText = document.createTextNode(email);
-                let salaryText = document.createTextNode(salary);
-                let delText = document.createTextNode("Delete");
-                nameTd.appendChild(nameText);
-                emailTd.appendChild(emailText);
-                salaryTd.appendChild(salaryText);
-                aEle.appendChild(delText);
-                aEle.href = "javascript:;";
+                tr.innerHTML = "<td>" + name + "</td>" +
+                                "<td>" + email + "</td>" +
+                                "<td>" + salary + "</td>" +
+                                "<td><a href='javascript:;'>Delete</a></td>";
+                alert(tr.innerHTML);
+                let aEle = tr.getElementsByTagName("a")[0];
                 aEle.onclick = delA;
-                aTd.appendChild(aEle);
-                tr.appendChild(nameTd);
-                tr.appendChild(emailTd);
-                tr.appendChild(salaryTd);
-                tr.appendChild(aTd);
                 tbody.appendChild(tr);
                 let employeeTable = document.getElementById("employeeTable");
                 employeeTable.appendChild(tbody);
