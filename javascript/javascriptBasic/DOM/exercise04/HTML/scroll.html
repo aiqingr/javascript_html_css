@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #info{
+        #info {
             width: 300px;
             height: 500px;
             background-color: #bbffaa;
@@ -13,7 +14,7 @@
         }
     </style>
     <script>
-        window.onload = function(){
+        window.onload = function () {
             /*
                 垂直滚动条滚动到底时使标单项可用
                 event： onscroll
@@ -21,20 +22,24 @@
             */
             let info = document.getElementById("info");
             let inputs = document.getElementsByTagName("input");
-            info.onscroll = function(){
+            info.onscroll = function () {
                 // 检查垂直滚动条是否滚动到底
-                if(info.scrollHeight- info.scrollTop == info.clientHeight){
+                if (info.scrollHeight - info.scrollTop == info.clientHeight) {
                     inputs[0].disabled = false;
-                    inputs[0].onchange = function(){
-                        if(inputs[0].checked == true){
-                            inputs[1].disabled = false;
-                        }
-                    }
+                }
+
+            };
+            inputs[0].onchange = function () {
+                if(inputs[0].checked == true){
+                    inputs[1].disabled = false;
+                } else {
+                    inputs[1].disabled = true;
                 }
             };
         }
     </script>
 </head>
+
 <body>
     <h3>Please read the following</h3>
     <p id="info">
@@ -293,4 +298,5 @@
     <input type="checkbox" disabled="disabled">I have read it
     <input type="submit" value="register" disabled="disabled">
 </body>
+
 </html>
