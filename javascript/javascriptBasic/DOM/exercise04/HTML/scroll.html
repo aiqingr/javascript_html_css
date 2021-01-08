@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #info{
+            width: 300px;
+            height: 500px;
+            background-color: #bbffaa;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /*
+                垂直滚动条滚动到底时使标单项可用
+                event： onscroll
+                - 该事情会在元素的滚动条滚动的时候触发
+            */
+            let info = document.getElementById("info");
+            let inputs = document.getElementsByTagName("input");
+            info.onscroll = function(){
+                // 检查垂直滚动条是否滚动到底
+                if(info.scrollHeight- info.scrollTop == info.clientHeight){
+                    inputs[0].disabled = false;
+                    inputs[0].onchange = function(){
+                        if(inputs[0].checked == true){
+                            inputs[1].disabled = false;
+                        }
+                    }
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <h3>Please read the following</h3>
+    <p id="info">
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+        Please Read It!
+    </p>
+    <!-- disabled 将按钮设置为不可以选择或者点击 -->
+    <input type="checkbox" disabled="disabled">I have read it
+    <input type="submit" value="register" disabled="disabled">
+</body>
+</html>

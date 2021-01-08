@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            border: 10px black solid;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            let box1 = document.getElementById("box1");
+            let btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+                /*
+                    clientHeight clientWidth
+                    这两个属性可以获取元素的可见宽度和高度
+                    这些属性都是不带px 返回都是一个数字
+                    会获取元素的高度宽度 包括内容区和内边距
+                    这些属性都是只读的 不可以修改
+                */
+
+                /*
+                    offsetWidth offsetHeight
+                    获取元素整个的宽度和高度 包含内容区内边距和边框
+                */
+
+                /*
+                    offsetParent
+                        用来获取当前元素的定位父元素
+                        会获取到离当前元素最近的开启定位的祖先元素
+                            如果祖先元素都没有开启定位 则返回body
+                */
+
+                /*
+                    scrollLeft
+                        -可以获取水平滚动条滚动的距离
+                    scrollTop
+                        -可以获取垂直滚动条滚动的距离
+                    当满足scrollHeight - ScrollTop == clientHeight
+                    说明垂直滚动条滚动到底了
+                    当满足scrollWidth - scrollLeft == clientWidth
+                    说明水平滚动条滚动到底了 
+                */
+                alert(box1.clientHeight);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">Click</button>
+    <br>
+    <div id="box1"></div>
+</body>
+</html>
