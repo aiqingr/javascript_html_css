@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            /*
+                键盘事件
+                    1 onkeydown
+                        对于onkeydown来说 如果一直按着某个按键不松手 则事件会一直触发
+                        当onkeydown连续触发的时候 第一次和第二次之间会间隔时间稍微长一点 其他会非常快 防止误操作
+                    2 onkeyup
+                键盘事件一般都会绑定给一些可以获取焦点的事件或者是document
+            */
+
+            /*
+                可以通过keyCode来获取按键的编码
+                通过他可以判断那个按键被按下
+                除了keyCode以后 事件对象中还提供了几个属性
+                altKey
+                CtrlKey
+                shiftKey
+                    这三个来判断alt ctrl 和shift是否被按下
+            */
+            document.onkeydown = function(event){
+                event = event || window.event;
+                // console.log(event.keyCode);
+                if(event.keyCode === 89){
+                    console.log("press y");
+                }
+                if(event.keyCode === 89 && event.altKey){
+                    console.log("press y and alt");
+                }
+                // console.log("click it");
+            };
+
+            
+
+            // document.onkeyup = function(){
+            //     console.log("loose it");
+            // };
+            let myInput = document.getElementsByTagName("input")[0];
+            myInput.onkeydown = function(event){
+                // console.log("按键被按下");
+                // keyCode is deprecated keyCode => ASCII
+                event = event || window.event;
+                if(event.key >= 0 && event.key <= 9){
+                    return false;
+                }
+                // 在文本中输入内容 属于onkeydown的默认行为
+                // 取消默认行为 return false
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>
